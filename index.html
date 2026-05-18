@@ -1,92 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Arcadia Studio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .box {
-      background: #111827;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      width: 320px;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #3b82f6;
-      color: white;
-      font-size: 14px;
-    }
-
-    button:hover {
-      background: #2563eb;
-    }
-
-    .danger {
-      background: #f97316;
-    }
-
-    .danger:hover {
-      background: #ea580c;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="box">
-    <h2>Quick Access</h2>
-
-    <button onclick="openPanel()">
-      Open Hosting Panel
-    </button>
-
-    <button class="danger" onclick="openCloudflare()">
-      Open Cloudflare DNS
-    </button>
-  </div>
-
-  <script>
-    function openPanel() {
-      window.open(
-        "https://panel.phantomichost.com/server/f804ac1a",
-        "_blank"
-      );
-    }
-
-    function openCloudflare() {
-      window.open(
-        "https://dash.cloudflare.com/3748ebe4240808e9550a3e3c65d46ab5/arcadiastudio.my.id/dns/records",
-        "_blank"
-      );
-    }
-  </script>
-
-</body>
-</html>
-
-
-<!DOCTYPE html>
 <html>
 <head>
   <title>Embed Panel</title>
@@ -104,7 +16,7 @@
 <body>
 
   <iframe 
-    src="https://example.com"
+    src="https://panel.phantomichost.com/server/f804ac1a"
   ></iframe>
 
 </body>
