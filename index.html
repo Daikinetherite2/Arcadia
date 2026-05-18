@@ -1,23 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Embed Panel</title>
-  <style>
-    body {
-      margin: 0;
-    }
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arcadia Studio</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0a0a0a;
+  font-family:Arial, sans-serif;
+  color:#fff;
+}
+
+/* CARD */
+.card{
+  width:340px;
+  padding:40px 28px;
+  text-align:center;
+}
+
+/* LOGO VIDEO (BESAR) */
+.logo{
+  width:140px;
+  height:140px;
+  margin-bottom:18px;
+  object-fit:contain;
+  opacity:0.98;
+  filter: grayscale(100%) brightness(1.15);
+}
+
+/* TITLE */
+h1{
+  font-size:22px;
+  letter-spacing:4px;
+  margin:0;
+}
+
+/* SUBTITLE */
+p{
+  font-size:12px;
+  opacity:0.5;
+  margin-bottom:20px;
+}
+
+/* BUTTONS */
+button{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  background:transparent;
+  border:1px solid #2a2a2a;
+  color:#fff;
+  cursor:pointer;
+  transition:0.2s;
+  font-size:13px;
+}
+
+button:hover{
+  border-color:#fff;
+  transform:scale(1.02);
+}
+
+/* FOOTER */
+footer{
+  margin-top:18px;
+  font-size:10px;
+  opacity:0.3;
+}
+</style>
+
 </head>
+
 <body>
 
-  <iframe 
-    src="https://panel.phantomichost.com/server/f804ac1a"
-  ></iframe>
+<div class="card">
+
+  <!-- LOGO VIDEO -->
+  <video class="logo" autoplay muted loop playsinline>
+    <source src="https://cdn.discordapp.com/attachments/1477970585161039995/1489675331446247716/arcadia.mp4?ex=6a0c9b43&is=6a0b49c3&hm=92ecc3122c5a8d52f5bb31c0183be6c3ed94af54eed39bae26a8a0b607c46d54" type="video/mp4">
+  </video>
+
+  <!-- BRAND -->
+  <h1>ARCADIA</h1>
+  <p>Studio Network</p>
+
+  <!-- LINKS -->
+  <button onclick="openLink('https://whatsapp.com/channel/0029VbBx5k6F6sn6pOhNbb2I')">
+    WhatsApp Channel
+  </button>
+
+  <button onclick="openLink('https://www.youtube.com/@arcadiastudio23')">
+    YouTube
+  </button>
+
+  <button onclick="openLink('https://discord.gg/E2M53EstPc')">
+    Discord
+  </button>
+
+  <footer>minimal • monochrome • studio</footer>
+
+</div>
+
+<script>
+function openLink(url){
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
