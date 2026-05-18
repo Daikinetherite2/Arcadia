@@ -1,58 +1,106 @@
-body{
-  margin:0;
-  background:#0a0a0a;
-  color:#fff;
-  font-family:Arial, sans-serif;
+*{
+  box-sizing:border-box;
 }
 
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0a0a0a;
+  font-family:Arial, sans-serif;
+  color:#fff;
+  padding:20px;
+}
+
+/* MAIN CONTAINER */
 .container{
-  width:360px;
-  margin:auto;
-  padding:40px 20px;
+  width:100%;
+  max-width:360px;
   text-align:center;
 }
 
+/* LOGO VIDEO (RESPONSIVE) */
 .logo{
-  width:140px;
-  height:140px;
+  width:clamp(90px, 25vw, 140px);
+  height:clamp(90px, 25vw, 140px);
   object-fit:contain;
   filter: grayscale(100%) brightness(1.15);
+  margin-bottom:16px;
+}
+
+/* TITLE */
+h1{
+  margin:0;
+  font-size:clamp(18px, 4vw, 22px);
+  letter-spacing:4px;
+}
+
+/* SUBTITLE */
+p{
+  font-size:12px;
+  opacity:0.5;
   margin-bottom:18px;
 }
 
-h1{
-  letter-spacing:4px;
-  margin:0;
-}
-
-p{
-  opacity:0.5;
-  font-size:12px;
-}
-
-button{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  background:transparent;
-  border:1px solid #2a2a2a;
-  color:white;
-  cursor:pointer;
-  transition:0.2s;
-}
-
-button:hover{
-  border-color:white;
-  transform:scale(1.02);
+/* NAVIGATION */
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:18px;
 }
 
 nav a{
   color:#aaa;
-  margin:0 10px;
-  font-size:12px;
   text-decoration:none;
+  font-size:12px;
 }
 
 nav a:hover{
-  color:white;
+  color:#fff;
+}
+
+/* BUTTON GROUP */
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* BUTTONS */
+button{
+  width:100%;
+  padding:12px;
+  background:transparent;
+  border:1px solid #2a2a2a;
+  color:#fff;
+  cursor:pointer;
+  transition:0.2s;
+  font-size:13px;
+  border-radius:6px;
+}
+
+button:hover{
+  border-color:#fff;
+  transform:scale(1.02);
+}
+
+/* MOBILE TWEAK */
+@media (max-width: 480px){
+  body{
+    align-items:flex-start;
+    padding-top:60px;
+  }
+
+  .container{
+    max-width:100%;
+  }
+
+  button{
+    font-size:14px;
+    padding:14px;
+  }
 }
