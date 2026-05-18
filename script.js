@@ -66,3 +66,49 @@ let currentGroup = "general";
 signInAnonymously(auth).then((user) => {
   currentUser = user.user.uid;
 });
+
+
+
+
+function joinGroup(groupName) {
+  currentGroup = groupName;
+  document.getElementById("messages").innerHTML = "";
+
+  const messagesRef = ref(db, `groups/${groupName}/messages`);
+
+  onChildAdded(messagesRef, (data) => {
+    const msg = data.val();
+
+    const div = document.createElement("div");
+    div.classList.add("msg");
+    div.innerText = `${msg.user}: ${msg.text}`;
+
+    document.getElementById("messages").appendChild(div);
+  });
+}
+
+
+
+function sendMessage() {
+  const text = document.getElementById("message").value;
+  if (!text) return;
+
+  const msgRef = ref(db, `groups/${currentGroup}/messages`);
+
+  push(msgRef, {
+    user: currentUser,
+    text: text,
+    timestamp: Date.now()
+  });
+
+  document.getElementById("message").value = "";
+}
+
+
+<div class="sidebar">
+  <h3>Groups</h3>
+
+  <button onclick="joinGroup('general')">#general</button>
+  <button onclick="joinGroup('minecraft')">#minecraft</button>
+  <button onclick="joinGroup('dev')">#dev</button>
+</div>
